@@ -7,8 +7,8 @@ PLAY_USER=Fred
 PLAY_PASS=secret
 PROMPT="MySQL Text Adventure> "
 
-mysql -u$CREATE_USER $DATABASE < tables.sql
-mysql -u$CREATE_USER $DATABASE < procedures.sql
+mysql -u$CREATE_USER -p$CREATE_PASS $DATABASE < tables.sql
+mysql -u$CREATE_USER -p$CREATE_PASS $DATABASE < procedures.sql
 
 mysql -u$CREATE_USER -p$CREATE_PASS $DATABASE << PERMISSIONS
 GRANT EXECUTE ON PROCEDURE $DATABASE.GIVE_TO TO '$PLAY_USER'@'localhost' IDENTIFIED BY '$PLAY_PASS';
