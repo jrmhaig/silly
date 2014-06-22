@@ -6,7 +6,7 @@ describe 'Mandelbrot set' do
       it 'converges' do
         c = Complex(r, -i)
         x = Complex(0, 0)
-        50.times do
+        5000.times do
           x = x**2 + c
           expect(x.magnitude).to be < 4
         end
