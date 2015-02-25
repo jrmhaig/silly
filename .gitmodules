@@ -1,0 +1,3 @@
+[submodule "mysql_games/gol/mytap"]
+	path = mysql_games/gol/mytap
+	url = https://github.com/theory/mytap
