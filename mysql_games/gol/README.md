@@ -17,7 +17,7 @@ Install MyTAP:
 
 and grant `SELECT` and `EXECUTE` privileges to the user created above:
 
-    mysql> GRANT SELECT, EXECUTE ON GoL.* TO 'gol'@'localhost';
+    mysql> GRANT SELECT, EXECUTE ON tap.* TO 'gol'@'localhost';
 
 ## Execute the tests
 
