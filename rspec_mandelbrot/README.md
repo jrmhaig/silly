@@ -2,7 +2,7 @@
 
 To create the Mandelbrot set, use:
 
-    rspec -o mandelbrot.txt spec/mand.rb
+    rspec -o mandelbrot.txt
     head -n 1 mandelbrot.txt
 
 I have not worked out how to get rspec to only show the progress and suppress
