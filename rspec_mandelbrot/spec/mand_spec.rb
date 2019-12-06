@@ -18,9 +18,10 @@ describe 'Mandelbrot set' do
 
   (i_0..i_1).step(i_step) do |i|
     (r_0..r_1).step(r_step) do |r|
-      it 'converges' do
-        c = Complex(r, -i)
-        x = Complex(0, 0)
+      it "converges with c = #{r} - #{i}i" do
+        c = r - i*1i
+        x = 0 + 0i
+
         500.times do
           x = x**2 + c
           expect(x.magnitude).to be < 2
@@ -28,5 +29,4 @@ describe 'Mandelbrot set' do
       end
     end
   end
-
 end
