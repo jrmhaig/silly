@@ -2,8 +2,11 @@
 
 To create the Mandelbrot set, use:
 
-    rspec -o mandelbrot.txt
-    head -n 1 mandelbrot.txt
+```bash
+bundle install
+bundle exec rspec -o mandelbrot.txt
+head -n 1 mandelbrot.txt
+```
 
 I have not worked out how to get rspec to only show the progress and suppress
 the information about failed tests (why would anyone want to do that, eh?) and

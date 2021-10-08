@@ -1,7 +1,7 @@
-describe 'Mandelbrot set' do
-  after(:all) do
-    sleep 50
-  end
+RSpec.describe 'Mandelbrot set' do
+  after(:all) { sleep 50 }
+
+  let(:iterations) { 500 }
 
   # Dimensions are actually 121x81.
   # Think fence-posts.
@@ -18,13 +18,13 @@ describe 'Mandelbrot set' do
 
   (i_0..i_1).step(i_step) do |i|
     (r_0..r_1).step(r_step) do |r|
-      it "converges with c = #{r} - #{i}i" do
-        c = r - i*1i
-        x = 0 + 0i
+      context "with c = #{r} - #{i}i" do
+        let(:c) { r - i*1i }
 
-        500.times do
-          x = x**2 + c
-          expect(x.magnitude).to be < 2
+        it do
+          iterations.times.inject(0) do |x|
+            (x**2 + c).tap { |y| expect(y).to be_within(2).of(0) }
+          end
         end
       end
     end
